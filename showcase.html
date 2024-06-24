@@ -39,8 +39,33 @@
   .banner img {
     height: 106px; /* Adjusted height for consistency */
     width: auto;
-    margin-right: 10px;
     cursor: pointer;
+  }
+
+  /* Center right aligned buttons */
+  .banner-buttons {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .banner-buttons button {
+    padding: 15px 25px; /* Adjusted padding */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem; /* Adjusted font size */
+  }
+
+  .banner-buttons button:hover {
+    background-color: white;
+    color: black;
   }
 
   /* Style for the logo image and video */
@@ -59,23 +84,6 @@
 
   .logo-and-video video {
     margin-left: 20px; /* Space between logo and video */
-  }
-
-  /* Side Panel Button */
-  #sidePanelButton {
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    border: 2px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px; /* Adjusted margin */
-    z-index: 10; /* Ensure it's above the logo */
   }
 
   /* Panel styling */
@@ -118,7 +126,7 @@
   }
 
   .panel-button {
-    width: calc(100% - 5px); /* Make buttons slightly longer with gap on both sides */
+    width: 100%; /* Full width */
     padding: 15px 20px; /* Adjusted padding */
     background-color: rgb(0, 0, 0);
     color: white;
@@ -141,8 +149,12 @@
   <a href="https://discord.gg/vanishgg" target="_blank">
     <img src="skilol.png" alt="Skill Icon">
   </a>
-  <!-- Side Panel Button -->
-  <div id="sidePanelButton" onclick="toggleSidePanel()">-</div>
+  <!-- Banner Buttons -->
+  <div class="banner-buttons">
+    <button class="panel-button" id="homeButton">Home</button>
+    <button class="panel-button">Showcase</button>
+    <button class="panel-button">Reviews</button>
+  </div>
 </div>
 
 <!-- Logo Image and Video -->
@@ -167,11 +179,17 @@
 
 <script>
   const sidePanel = document.getElementById('sidePanel');
+  const homeButton = document.getElementById('homeButton');
 
   // Function to toggle side panel
   function toggleSidePanel() {
     sidePanel.style.left = sidePanel.style.left === '-100%' ? '0' : '-100%';
   }
+
+  // Navigate to index.html when Home button is clicked
+  homeButton.addEventListener('click', function() {
+    window.location.href = 'index.html';
+  });
 </script>
 
 </body>
