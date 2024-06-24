@@ -14,6 +14,7 @@
     align-items: center;
     background-color: rgb(14, 14, 14); /* Background color */
     overflow: hidden;
+    font-family: Arial, sans-serif;
   }
 
   .banner {
@@ -53,11 +54,11 @@
   }
 
   .banner-buttons button {
-    padding: 15px 25px; /* Adjusted padding */
-    background-color: black;
+    padding: 10px 20px; /* Adjusted padding */
+    background-color: rgb(19, 19, 19);
     color: white;
     border: none;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 10px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     font-size: 1rem; /* Adjusted font size */
@@ -151,9 +152,9 @@
   </a>
   <!-- Banner Buttons -->
   <div class="banner-buttons">
-    <button class="panel-button" id="homeButton">Home</button>
-    <button class="panel-button">Showcase</button>
-    <button class="panel-button">Reviews</button>
+    <button class="panel-button" onclick="navigateToHome()">Home</button>
+    <button class="panel-button" onclick="navigateToShowcase()">Showcase</button>
+    <button class="panel-button" onclick="navigateToReview()">Reviews</button>
   </div>
 </div>
 
@@ -173,23 +174,33 @@
   </div>
   <div class="panel-content">
     <a href="index.html" class="panel-button">Home</a>
+    <a href="showcase.html" class="panel-button">Showcase</a>
     <a href="review.html" class="panel-button">Reviews</a>
   </div>
 </div>
 
 <script>
   const sidePanel = document.getElementById('sidePanel');
-  const homeButton = document.getElementById('homeButton');
 
   // Function to toggle side panel
   function toggleSidePanel() {
     sidePanel.style.left = sidePanel.style.left === '-100%' ? '0' : '-100%';
   }
 
-  // Navigate to index.html when Home button is clicked
-  homeButton.addEventListener('click', function() {
+  // Function to navigate to index.html when Home button is clicked
+  function navigateToHome() {
     window.location.href = 'index.html';
-  });
+  }
+
+  // Function to navigate to showcase.html when Showcase button is clicked
+  function navigateToShowcase() {
+    window.location.href = 'showcase.html';
+  }
+
+  // Function to navigate to review.html when Reviews button is clicked
+  function navigateToReview() {
+    window.location.href = 'review.html';
+  }
 </script>
 
 </body>
