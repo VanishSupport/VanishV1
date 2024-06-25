@@ -138,10 +138,11 @@
     opacity: 0.3; /* Adjusted opacity of the background image */
     z-index: -1;
     border-radius: 10px; /* Match the box's border radius */
+    transition: opacity 0.3s ease; /* Added transition for opacity */
   }
 
   .box:hover::before {
-    opacity: 0.3; /* Ensure opacity remains at 30% on hover as well */
+    opacity: 0.6; /* Increase opacity on hover */
   }
 
   .box:hover {
