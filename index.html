@@ -31,7 +31,7 @@
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
   }
 
   .banner img {
@@ -99,21 +99,21 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none; /* Initially hidden */
-    flex-direction: row; /* Arrange boxes horizontally */
-    justify-content: space-between; /* Spread boxes out */
-    gap: 90px; /* Increased spacing between boxes */
-    width: 90%; /* Adjust as needed */
-    max-width: 1000px; /* Limit maximum width of container */
-    margin-top: 20px; /* Added margin between vanish text and boxes */
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 90px;
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 20px;
   }
 
   .box {
-    position: relative; /* Ensure relative positioning for ::before pseudo-element */
-    width: 400px; /* Adjusted width */
-    height: 500px; /* Adjusted height */
-    background-color: rgba(14, 14, 14, 0.7); /* Background color with 70% opacity */
-    border: 5px solid rgb(153, 0, 235); /* Purple border */
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(14, 14, 14, 0.7);
+    border: 5px solid rgb(153, 0, 235);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,9 +122,9 @@
     color: white;
     border-radius: 10px;
     padding: 20px;
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Added box-shadow transition */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
     box-shadow: 0 0 20px rgb(153, 0, 235);
-    box-sizing: border-box; /* Ensure padding and border are included in width */
+    box-sizing: border-box;
   }
 
   .box::before {
@@ -135,19 +135,19 @@
     width: 100%;
     height: 100%;
     background-image: url('purp.png');
-    opacity: 0.3; /* Adjusted opacity of the background image */
+    opacity: 0.3;
     z-index: -1;
-    border-radius: 10px; /* Match the box's border radius */
-    transition: opacity 0.3s ease; /* Added transition for opacity */
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
   }
 
   .box:hover::before {
-    opacity: 0.6; /* Increase opacity on hover */
+    opacity: 0.6;
   }
 
   .box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgb(153, 0, 235); /* Increased box-shadow on hover */
+    box-shadow: 0 0 30px rgb(153, 0, 235);
   }
 
   .box h2 {
@@ -164,7 +164,7 @@
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
     margin-top: 20px;
-    cursor: pointer; /* Added cursor pointer */
+    cursor: pointer;
   }
 
   .box .button:hover {
@@ -172,18 +172,17 @@
     color: black;
   }
 
-  /* Panel styling */
   .side-panel {
     position: fixed;
     top: 0;
-    left: -100%; /* Initially off-screen */
+    left: -100%;
     height: 100vh;
-    width: 12%; /* Adjusted width to cover less screen */
-    background-color: rgb(35, 35, 35); /* Dark color */
-    transition: left 0.3s ease-out; /* Slide transition */
+    width: 12%;
+    background-color: rgb(35, 35, 35);
+    transition: left 0.3s ease-out;
     z-index: 1000;
-    padding: 20px; /* Added padding */
-    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -208,12 +207,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px; /* Increased gap between buttons */
+    gap: 15px;
   }
 
   .panel-button {
-    width: calc(100% - 5px); /* Make buttons slightly longer with gap on both sides */
-    padding: 15px 20px; /* Adjusted padding */
+    width: calc(100% - 5px);
+    padding: 15px 20px;
     background-color: rgb(0, 0, 0);
     color: white;
     border: 2px solid white;
@@ -221,7 +220,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    text-align: center; /* Center text within button */
+    text-align: center;
   }
 
   .panel-button:hover {
@@ -258,7 +257,6 @@
   </div>
 </div>
 
-<!-- Side Panel -->
 <div class="side-panel" id="sidePanel">
   <div class="panel-header">
     <span class="panel-close" onclick="toggleSidePanel()">X</span>
@@ -275,12 +273,10 @@
   const boxContainer = document.getElementById('boxContainer');
   const sidePanel = document.getElementById('sidePanel');
 
-  // Function to toggle side panel
   function toggleSidePanel() {
     sidePanel.style.left = sidePanel.style.left === '-100%' ? '0' : '-100%';
   }
 
-  // Function to navigate to review.html
   function navigateToReview() {
     window.location.href = 'showcase.html';
   }
@@ -289,15 +285,12 @@
     vanishText.style.opacity = '1';
     setTimeout(() => {
       vanishText.style.display = 'none';
-      banner.style.opacity = '1'; // Show the banner
-      boxContainer.style.display = 'flex'; // Show the box container
-
-      // Adding pop-up animation to close box
+      banner.style.opacity = '1';
+      boxContainer.style.display = 'flex';
       banner.style.animation = 'popup 0.5s forwards';
-    }, 2000); // Adjust timing as needed
-  }, 500); // Adjust timing as needed
+    }, 2000);
+  }, 500);
 
-  // Keyframes for pop-up animation
   const styleSheet = document.styleSheets[0];
   styleSheet.insertRule(`
     @keyframes popup {
