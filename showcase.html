@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(14, 14, 14); /* Background color */
+    background-color: rgb(14, 14, 14);
     overflow: hidden;
     font-family: Arial, sans-serif;
   }
@@ -23,11 +23,11 @@
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: rgb(23, 23, 23); /* Banner background color */
+    background-color: rgb(23, 23, 23);
     border-bottom: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align items to the start */
+    justify-content: flex-start;
     padding-left: 10px;
     box-sizing: border-box;
   }
@@ -38,12 +38,11 @@
   }
 
   .banner img {
-    height: 106px; /* Adjusted height for consistency */
+    height: 106px;
     width: auto;
     cursor: pointer;
   }
 
-  /* Center right aligned buttons */
   .banner-buttons {
     position: absolute;
     top: 50%;
@@ -54,15 +53,15 @@
   }
 
   .banner-buttons button {
-    padding: 0.01px 15px; /* Adjusted padding */
-    min-width: 80px; /* Adjusted minimum width */
+    padding: 0.01px 15px;
+    min-width: 80px;
     background-color: rgb(19, 19, 19);
     color: white;
     border: none;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 1rem;
   }
 
   .banner-buttons button:hover {
@@ -70,36 +69,34 @@
     color: black;
   }
 
-  /* Style for the logo image and video */
   .logo-and-video {
     display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    height: 80vh; /* Adjusted height to center vertically */
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
   }
 
   .logo-and-video img,
   .logo-and-video video {
-    height: 400px; /* Adjusted height for both image and video */
+    height: 400px;
     width: auto;
   }
 
   .logo-and-video video {
-    margin-left: 20px; /* Space between logo and video */
+    margin-left: 20px;
   }
 
-  /* Panel styling */
   .side-panel {
     position: fixed;
     top: 0;
-    left: -100%; /* Initially off-screen */
+    left: -100%;
     height: 100vh;
-    width: 12%; /* Adjusted width to cover less screen */
-    background-color: rgb(35, 35, 35); /* Dark color */
-    transition: left 0.3s ease-out; /* Slide transition */
+    width: 12%;
+    background-color: rgb(35, 35, 35);
+    transition: left 0.3s ease-out;
     z-index: 1000;
-    padding: 20px; /* Added padding */
-    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -124,12 +121,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px; /* Increased gap between buttons */
+    gap: 15px;
   }
 
   .panel-button {
-    width: 100%; /* Full width */
-    padding: 15px 20px; /* Adjusted padding */
+    width: 100%;
+    padding: 15px 20px;
     background-color: rgb(0, 0, 0);
     color: white;
     border: 2px solid white;
@@ -137,7 +134,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    text-align: center; /* Center text within button */
+    text-align: center;
   }
 
   .panel-button:hover {
@@ -151,7 +148,6 @@
   <a href="https://discord.gg/vanishgg" target="_blank">
     <img src="skilol.png" alt="Skill Icon">
   </a>
-  <!-- Banner Buttons -->
   <div class="banner-buttons">
     <button class="panel-button" onclick="navigateToHome()">Home</button>
     <button class="panel-button" onclick="navigateToShowcase()">Showcase</button>
@@ -159,7 +155,6 @@
   </div>
 </div>
 
-<!-- Logo Image and Video -->
 <div class="logo-and-video">
   <img src="lolhi.png" alt="Logo">
   <video controls>
@@ -168,7 +163,6 @@
   </video>
 </div>
 
-<!-- Side Panel -->
 <div class="side-panel" id="sidePanel">
   <div class="panel-header">
     <span class="panel-close" onclick="toggleSidePanel()">X</span>
@@ -183,22 +177,18 @@
 <script>
   const sidePanel = document.getElementById('sidePanel');
 
-  // Function to toggle side panel
   function toggleSidePanel() {
     sidePanel.style.left = sidePanel.style.left === '-100%' ? '0' : '-100%';
   }
 
-  // Function to navigate to index.html when Home button is clicked
   function navigateToHome() {
     window.location.href = 'index.html';
   }
 
-  // Function to navigate to showcase.html when Showcase button is clicked
   function navigateToShowcase() {
     window.location.href = 'showcase.html';
   }
 
-  // Function to navigate to review.html when Reviews button is clicked
   function navigateToReview() {
     window.location.href = 'review.html';
   }
